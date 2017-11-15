@@ -29,5 +29,5 @@ if __name__ == '__main__':
 
             server.sendmail(gmail_sender, [TO], BODY)
             server.quit()
-        break
+            break
     time.sleep(30)

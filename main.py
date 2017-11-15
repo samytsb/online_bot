@@ -5,7 +5,7 @@ import time
 
 if __name__ == '__main__':
     while 1:
-        contents = urllib.request.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-sc").read().decode("utf-8")
+        contents = urllib.request.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-xc").read().decode("utf-8")
         nb = contents.count("Victime de son succès")
         print(nb)
         if nb < 2:

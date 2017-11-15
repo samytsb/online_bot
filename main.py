@@ -9,7 +9,7 @@ if __name__ == '__main__':
         contents = urllib.request.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-xc").read().decode("utf-8")
         nb = contents.count("Victime de son succès")
         print("Dispo srv : ", nb)
-        if nb < 2:
+        if 1:
             TO = 'samytsb@gmail.com'
             SUBJECT = 'Serveur Online'
             TEXT = 'Go commander https://www.online.net/fr/serveur-dedie/dedibox-xc.'

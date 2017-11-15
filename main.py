@@ -1,12 +1,20 @@
 #!/usr/bin/env python
-import urllib.request
+# coding=utf-8
+import urllib2
 import smtplib
+import os
 import time
+from flask import Flask
 
-if __name__ == '__main__':
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello():
+    print "lol"
     while 1:
         time.sleep(30)
-        contents = urllib.request.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-xc").read().decode("utf-8")
+        contents = urllib2.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-xc").read().decode("utf-8")
         nb = contents.count("Victime de son succès")
         print("Dispo srv : ", nb)
         if True:
@@ -30,4 +38,11 @@ if __name__ == '__main__':
 
             server.sendmail(gmail_sender, [TO], BODY)
             server.quit()
-            break
+            return
+
+
+
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 80))
+    app.run(host='0.0.0.0', port=port)

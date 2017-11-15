@@ -5,9 +5,10 @@ import time
 
 if __name__ == '__main__':
     while 1:
+        time.sleep(30)
         contents = urllib.request.urlopen("https://www.online.net/fr/serveur-dedie/dedibox-xc").read().decode("utf-8")
         nb = contents.count("Victime de son succès")
-        print(nb)
+        print("Dispo srv : ", nb)
         if nb < 2:
             TO = 'samytsb@gmail.com'
             SUBJECT = 'Serveur Online'
@@ -30,4 +31,3 @@ if __name__ == '__main__':
             server.sendmail(gmail_sender, [TO], BODY)
             server.quit()
             break
-    time.sleep(30)
